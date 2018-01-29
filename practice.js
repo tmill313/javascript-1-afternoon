@@ -18,7 +18,11 @@ var name = 'Tyler';
 */
 
 function isTyler(name) {
-  return name = 'Tyler';
+  if(name === 'Tyler') {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
@@ -29,8 +33,8 @@ function isTyler(name) {
   Create a function called getName that uses prompt() to prompt the user for their name and then returns the given name.
 */
 
-var name = prompt('What is your name?')
-function getName(name) {
+function getName() {
+  var name = prompt('What is your name?')
   return name;
 }
 
@@ -45,8 +49,9 @@ function getName(name) {
   Example: "Welcome, Bob Joe"
 */
 
-function welcome(getName) {
-  return 'Welcome, ' + getName;
+function welcome() {
+  var name = getName()
+  alert('Welcome, ' + name);
 }
 
 
@@ -57,7 +62,7 @@ function welcome(getName) {
   What is the difference between arguments and parameters?
 */
 
-'Parameters are basically placeholders.  Arguments are the actual information that you would use'
+/* Parameters are basically placeholders.  Arguments are the actual information that you would use */
 
 
 
@@ -67,7 +72,7 @@ function welcome(getName) {
   What are all the falsy values in JavaScript and how do you check if something is falsy?
 */
 
-'false, 0, empty string, undefined, NaN - If it is cohersed to any of these it is falsy otherwise it is truthy'
+/* false, 0, empty string, undefined, NaN - If it is cohersed to any of these it is falsy otherwise it is truthy */
 
 
 
@@ -78,7 +83,7 @@ function welcome(getName) {
 */
 
 function myName() {
-  return 'Taylor';
+  return "Taylor";
 }
   
 
@@ -95,7 +100,7 @@ var newMyName = myName;
   Now alert the result of invoking newMyName
 */
 
-newMyName;
+alert(newMyName());
 
 
 
@@ -104,11 +109,8 @@ newMyName;
 /*
   Create a function called outerFn which returns an anonymous function which returns your name.
 */
-function me() {
-  return 'Taylor';
-}
-function outerFn(me) {
-  return me;
+function outerFn() {
+ return () => "Taylor";
 }
 
 
@@ -117,7 +119,7 @@ function outerFn(me) {
   Now save the result of invoking outerFn into a variable called innerFn.
 */
 
-var innerFn = outerFn;
+var innerFn = outerFn();
 
 
 
